@@ -9,7 +9,7 @@ const font = Lilita_One({ weight: "400", subsets: ["latin"] });
 
 const HeroComponent = () => {
   return (
-    <div className="flex justify-between items-center min-h-[300px] mt-10 relative">
+    <div className="flex justify-between items-center min-h-[400px] mt-10 relative">
       <div>
         <GradientComponent />
         <div className="flex gap-2 items-center">
