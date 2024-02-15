@@ -1,4 +1,3 @@
-import GradientComponent from "./components/gradients/GradientComponent";
 import HeroComponent from "./components/home/HeroComponent";
 
 export default function Home() {
