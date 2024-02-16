@@ -8,9 +8,9 @@ const ToolboxCard = () => {
       <div className="w-[80px] h-[80px] p-4 rounded-full border-[0.5px] scale-100 border-cyan-300/50 group-hover:border-cyan-300 group-hover:scale-110 translate-y-0 group-hover:translate-y-1 transition duration-200">
         <Image src={toolbox} alt="Toolbox" width={70} height={70} />
       </div>
-      <p className="translate-y-0 group-hover:-translate-y-1 transition duration-300">
+      <h3 className="text-cyan-100 translate-y-0 group-hover:-translate-y-1 transition duration-300">
         Toolbox
-      </p>
+      </h3>
     </div>
   );
 };

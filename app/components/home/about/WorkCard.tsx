@@ -12,9 +12,9 @@ const WorkCard = () => {
         height={75}
         className="scale-100 group-hover:scale-110 translate-y-0 group-hover:translate-y-1 transition duration-200"
       />
-      <p className=" translate-y-0 group-hover:-translate-y-1 transition duration-300">
+      <h3 className="text-cyan-100 translate-y-0 group-hover:-translate-y-1 transition duration-300">
         Work
-      </p>
+      </h3>
     </div>
   );
 };
