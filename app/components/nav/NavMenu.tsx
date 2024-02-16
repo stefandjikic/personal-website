@@ -60,7 +60,7 @@ const NavMenu = () => {
       </button>
       {isMenuOpen && (
         <div
-          className="flex flex-col w-48 absolute top-12 right-0 z-10 rounded-md backdrop-blur-sm bg-white/5"
+          className="flex flex-col w-48 absolute top-12 right-0 z-10 rounded-md backdrop-blur-sm bg-white/10"
           ref={menuRef}
         >
           {LINKS.map((link) => (
@@ -68,7 +68,7 @@ const NavMenu = () => {
               onClick={() => setIsMenuOpen(false)}
               key={link.name}
               href={link.href}
-              className="font-semibold p-3 hover:bg-slate-900"
+              className="font-semibold rounded-md p-3 hover:bg-slate-900/70 hover:text-cyan-100"
             >
               {link.name}
             </Link>
