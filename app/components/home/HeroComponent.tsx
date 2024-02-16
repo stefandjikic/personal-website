@@ -30,7 +30,7 @@ const HeroComponent = () => {
       </div>
       <div className="backdrop-blur-sm bg-white/5 rounded-md relative ">
         <GradientComponent />
-        <div className="rounded-md bg-gradient-to-r from-indigo-600 to-cyan-800 hover:bg-gradient-to-l">
+        <div className="rounded-md bg-gradient-to-r from-indigo-600 to-cyan-800">
           <Image
             src={me}
             alt="Stefan Djikic"

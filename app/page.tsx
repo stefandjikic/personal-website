@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <HeroComponent />
-      <div className="mt-24">
+      <div className="mt-28">
         <BlogSection />
       </div>
     </div>
