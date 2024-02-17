@@ -7,16 +7,16 @@ import Link from "next/link";
 const AboutCard = () => {
   return (
     <Link href="/about">
-    <div className="h-full overflow-hidden flex flex-col gap-10 justify-end items-center rounded-md backdrop-blur-sm p-4 group bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 transition duration-300">
-      <h3 className="text-cyan-100 absolute -bottom-5 group-hover:-translate-y-60 transition duration-300">
-        Learn more about me
-      </h3>
-      <Image
-        src={moonlight}
-        alt="Moonlight"
-        className=" translate-y-4 transition duration-300"
-      />
-    </div>
+      <div className="h-full overflow-hidden flex flex-col gap-10 justify-end items-center rounded-md backdrop-blur-sm p-4 group bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 transition duration-300">
+        <h3 className="text-cyan-100 absolute -bottom-5 group-hover:-translate-y-60 transition duration-300">
+          Learn more about me
+        </h3>
+        <Image
+          src={moonlight}
+          alt="Moonlight"
+          className="translate-y-[17px] transition duration-300"
+        />
+      </div>
     </Link>
   );
 };

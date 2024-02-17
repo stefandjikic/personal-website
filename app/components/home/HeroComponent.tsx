@@ -2,7 +2,7 @@ import React from "react";
 import GradientComponent from "../gradients/GradientComponent";
 import Image from "next/image";
 import hiIcon from "@/app/assets/icons/hi-y.svg";
-import me from "@/app/assets/images/me.jpg";
+import me from "@/app/assets/images/me-4.jpg";
 import { Lilita_One } from "next/font/google";
 import SocialButtons from "../social/SocialButtons";
 
