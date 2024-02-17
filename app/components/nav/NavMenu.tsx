@@ -17,11 +17,11 @@ const NavMenu = () => {
     },
     {
       name: "Work",
-      href: "/",
+      href: "/work",
     },
     {
       name: "Projects",
-      href: "/",
+      href: "/projects",
     },
   ];
 
