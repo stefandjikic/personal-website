@@ -1,9 +1,12 @@
+import Link from "next/link";
 import React from "react";
 
 const AboutPage = () => {
   return (
     <div className="mt-14 mx-auto max-w-3xl">
-      <h1 className="text-3xl text-center font-semibold mb-16 text-cyan-100">About</h1>
+      <h1 className="text-3xl text-center font-semibold mb-16 text-cyan-100">
+        About
+      </h1>
       <section className="mb-10">
         <h2 className="text-2xl my-8 text-cyan-100">How it started...</h2>
         <p className="mb-2 text-gray-300/90">
@@ -94,6 +97,11 @@ const AboutPage = () => {
           where I create educational content and projects for aspiring
           developers. I mainly focus on teaching React and Next.js.
         </p>
+        <div className="mt-16">
+          <Link href="/work" className="text-center text-cyan-100">
+            See more about my work experience
+          </Link>
+        </div>
       </section>
     </div>
   );
