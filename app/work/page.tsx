@@ -10,10 +10,30 @@ const WorkPage = () => {
         Work Experience
       </h1>
       <section className="mb-20">
-        <div className="grid grid-cols-3 gap-6 justify-between items-center mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
           <div className="col-span-2">
-            <h2 className="text-cyan-50/70">Frontend Developer</h2>
-            <h3 className="text-2xl font-bold text-cyan-100 mb-6">K7 Tech</h3>
+            <div className="mb-6 flex gap-4 items-center">
+              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+                <a
+                  href="https://k7tech.agency/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    src={k7techImg}
+                    alt="K7 Tech"
+                    className="rounded-full group-hover:scale-105 transition duration-200"
+                    width={60}
+                    height={60}
+                  />
+                </a>
+              </div>
+              <div>
+                <h2 className="text-cyan-50/70 text-sm">Frontend Developer</h2>
+                <h3 className="text-2xl font-bold text-cyan-100">K7 Tech</h3>
+              </div>
+            </div>
+
             <p className="leading-7 font-light">
               At K7Tech, I work as a full-time frontend developer, actively
               participating in all stages of web and mobile app development. I
@@ -23,7 +43,7 @@ const WorkPage = () => {
               mobile apps.
             </p>
           </div>
-          <div className="flex justify-center items-center w-[200px] h-[200px] ml-auto rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+          <div className="hidden sm:flex justify-center items-center w-[200px] h-[200px] ml-auto rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
             <a href="https://k7tech.agency/" target="_blank" rel="noreferrer">
               <Image
                 src={k7techImg}
@@ -36,15 +56,31 @@ const WorkPage = () => {
           </div>
         </div>
       </section>
+
       <section className="mb-20">
-        <div className="grid grid-cols-3 gap-6 justify-between items-center mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
           <div className="col-span-2">
-            <h2 className="text-cyan-50/70">
-              Frontend Development Course Lecturer
-            </h2>
-            <h3 className="text-2xl font-bold text-cyan-100 mb-6">
-              Code by Comtrade
-            </h3>
+            <div className="mb-6 flex gap-4 items-center">
+              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+                <a href="https://code.edu.rs/" target="_blank" rel="noreferrer">
+                  <Image
+                    src={codeImg}
+                    alt="Code by Comtrade"
+                    className="rounded-full group-hover:scale-105 transition duration-200"
+                    width={60}
+                    height={60}
+                  />
+                </a>
+              </div>
+              <div>
+                <h2 className="text-cyan-50/70 text-sm">
+                  Frontend Development Course Lecturer
+                </h2>
+                <h3 className="text-2xl font-bold text-cyan-100">
+                  Code by Comtrade
+                </h3>
+              </div>
+            </div>
             <p className="leading-7 font-light">
               At Code By Comtrade, I had the privilege of sharing my knowledge
               and expertise with aspiring developers. As a course lecturer, I
@@ -53,11 +89,11 @@ const WorkPage = () => {
               responsibility of evaluating their final exams and projects.
             </p>
           </div>
-          <div className="flex justify-center items-center w-[200px] h-[200px] ml-auto rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+          <div className="hidden sm:flex  justify-center items-center w-[200px] h-[200px] ml-auto rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
             <a href="https://code.edu.rs/" target="_blank" rel="noreferrer">
               <Image
                 src={codeImg}
-                alt="K7 Tech"
+                alt="Code by Comtrade"
                 className="rounded-full group-hover:scale-105 transition duration-200"
                 width={150}
                 height={50}
