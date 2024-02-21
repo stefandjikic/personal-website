@@ -13,7 +13,7 @@ const WorkPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
           <div className="col-span-2">
             <div className="mb-6 flex gap-4 items-center">
-              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-2 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
                 <a
                   href="https://k7tech.agency/"
                   target="_blank"
@@ -61,14 +61,14 @@ const WorkPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
           <div className="col-span-2">
             <div className="mb-6 flex gap-4 items-center">
-              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-2 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
                 <a href="https://code.edu.rs/" target="_blank" rel="noreferrer">
                   <Image
                     src={codeImg}
                     alt="Code by Comtrade"
                     className="rounded-full group-hover:scale-105 transition duration-200"
-                    width={60}
-                    height={60}
+                    width={40}
+                    height={40}
                   />
                 </a>
               </div>
