@@ -1,18 +1,24 @@
 import React from "react";
 import ProjectCard from "../components/cards/ProjectCard";
+import { PROJECTS_DATA } from "../utils/projects_data";
 
 const ProjectsPage = () => {
   return (
     <div className="mt-14 ">
-      <h1 className="text-3xl text-center font-semibold mb-16 text-cyan-100">
-        Projects
+      <h1 className="text-3xl text-center font-semibold mb-20 text-cyan-100">
+        {PROJECTS_DATA.title}
       </h1>
-      <ProjectCard
-        name="Project Name"
-        description="A short description of the project. This could be a summary of the project's goals and the technologies used."
-        projectUrl="#"
-        sourceUrl="#"
-      />
+
+      {PROJECTS_DATA.projects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          name={project.name}
+          description={project.description}
+          projectUrl={project.projectUrl}
+          sourceUrl={project.sourceUrl}
+          projectImage={project.projectImage}
+        />
+      ))}
     </div>
   );
 };
