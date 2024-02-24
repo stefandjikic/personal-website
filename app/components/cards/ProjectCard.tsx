@@ -21,7 +21,7 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <section className="text-gray-200 mb-20">
-      <div className="flex gap-10 sm:gap-20 items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-10 sm:gap-20 items-center justify-between">
         <div>
           {" "}
           <h3 className="text-2xl font-semibold text-cyan-100 mb-4">
