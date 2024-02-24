@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import SocialIcon from "../social/SocialIcon";
 import linkImg from "@/app/assets/icons/link.svg";
 import ghImg from "@/app/assets/icons/gh-fill.svg";
+import ProjectCardGradient from "../gradients/ProjectCardGradient";
 
 interface ProjectCardProps {
   name: string;
@@ -32,28 +33,24 @@ const ProjectCard = ({
               "A short description of the project. This could be a summary of the project's goals and the technologies used."}
           </p>
           <div className="flex gap-4">
-            <a
-              href={projectUrl || "#"}
-              rel="noreferrer"
-              target="_blank"
-              className="text-cyan-100 hover:underline hover:text-cyan-200"
-            >
-              <SocialIcon href={projectUrl} icon={linkImg} alt="Project Link" />
-            </a>
+            <SocialIcon href={projectUrl} icon={linkImg} alt="Project Link" />
             {sourceUrl && (
               <SocialIcon href={sourceUrl} icon={ghImg} alt="Source Code" />
             )}
           </div>
         </div>
-        <div className="roudned-md relative ">
-          {/* <div className="absolute w-full h-full rounded-md bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l transition duration-300"></div> */}
-          <Image
-            src={projectImage || "/images/placeholder.png"}
-            alt="Project Image"
-            className="rounded-md max-w-[360px]"
-            width={360}
-            height={260}
-          />
+        <div className="roudned-md relative group">
+          <a href={projectUrl} target="_blank" rel="noreferrer">
+            <div className="absolute opacity-50 w-full h-full rounded-md bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l transition duration-300"></div>
+            <ProjectCardGradient />
+            <Image
+              src={projectImage || "/images/placeholder.png"}
+              alt="Project Image"
+              className="rounded-md max-w-[360px]"
+              width={360}
+              height={260}
+            />
+          </a>
         </div>
       </div>
     </section>
