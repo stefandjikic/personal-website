@@ -28,7 +28,7 @@ const ProjectCard = ({
           <h3 className="text-2xl font-semibold text-cyan-100 mb-4">
             {name || "Project Name"}
           </h3>
-          <p className="text-lg mb-4">
+          <p className="text-md leading-7 mb-4">
             {description ||
               "A short description of the project. This could be a summary of the project's goals and the technologies used."}
           </p>

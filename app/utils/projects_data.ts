@@ -1,5 +1,6 @@
 import kulijanaImg from "@/app/assets/images/kulijana.webp";
 import medidredImg from "@/app/assets/images/medidred.webp";
+import ceImg from "@/app/assets/images/ce-screen.webp";
 
 export const PROJECTS_DATA = {
   title: "Projects",
@@ -22,6 +23,15 @@ export const PROJECTS_DATA = {
       projectUrl: "https://medidred.com",
       sourceUrl: null,
       projectImage: medidredImg,
+    },
+    {
+      id: 3,
+      name: "YouTube Channel - Codewalk Empire",
+      description:
+        "A YouTube channel where I share my knowledge and experience with web development. I create tutorials, code walkthroughs and other content related to web development and programming. Visit the channel to check out the content I've created so far and subscribe if you like it :)",
+      projectUrl: "https://www.youtube.com/@codewalkempire",
+      sourceUrl: null,
+      projectImage: ceImg,
     },
   ],
 };
