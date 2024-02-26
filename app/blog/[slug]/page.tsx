@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 const getPostContent = (slug: string) => {
   const path = `posts/${slug}.md`;
@@ -24,7 +25,9 @@ const PostPage = (props: PostPageProps) => {
       <h1 className="text-3xl text-center font-semibold mb-20 text-cyan-50">
         {post.data.title}
       </h1>
-      <p>{post.content}</p>
+      <article className="prose prose-invert prose-cyan">
+        <MDXRemote source={post.content} />
+      </article>
     </div>
   );
 };
