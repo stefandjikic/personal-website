@@ -26,6 +26,23 @@
   }
 }
 
+.prose h1 {
+  @apply text-2xl font-bold;
+}
+
+.prose h2 {
+  @apply text-xl font-bold;
+}
+
+.prose h3, .prose h4 {
+  @apply text-lg font-bold;
+}
+
+.prose .anchor:after {
+  @apply text-cyan-300/30;
+  content: "#";
+}
+
 .prose pre {
   @apply bg-slate-900 rounded-md overflow-x-auto border border-cyan-300/10;
 }
@@ -72,4 +89,3 @@ table {
   overflow-x: auto;
   white-space: nowrap;
 }
-

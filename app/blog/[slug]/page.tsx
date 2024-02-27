@@ -1,12 +1,25 @@
+import { CustomMDX } from "@/app/components/mdx";
 import fs from "fs";
 import matter from "gray-matter";
-import { MDXRemote } from "next-mdx-remote/rsc";
 
 const getPostContent = (slug: string) => {
-  const path = `posts/${slug}.md`;
+  const path = `posts/${slug}.mdx`;
   const file = fs.readFileSync(path, "utf-8");
   const matterResult = matter(file);
   return matterResult;
+};
+
+// TODO: Make pages static:
+export const generateStaticParams = async () => {
+  const posts = fs.readdirSync("posts");
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.replace(".mdx", ""),
+      },
+    };
+  });
+  return paths;
 };
 
 interface PostPageProps {
@@ -21,12 +34,16 @@ const PostPage = (props: PostPageProps) => {
   console.log(post, "post");
 
   return (
-    <div className="mt-14 mb-24 mx-auto max-w-3xl">
-      <h1 className="text-3xl text-center font-semibold mb-20 text-cyan-50">
-        {post.data.title}
-      </h1>
-      <article className="prose prose-invert prose-cyan">
-        <MDXRemote source={post.content} />
+    <div className="mt-14 mb-24 mx-auto max-w-2xl">
+      <div className="max-w-2xl mb-20 ">
+        <h1 className="text-2xl font-semibold text-cyan-50">
+          {post.data.title}
+        </h1>
+        <p>{post?.data?.date}</p>
+      </div>
+
+      <article className="prose prose-invert prose-quoteless prose-cyan">
+        <CustomMDX source={post.content} />
       </article>
     </div>
   );
