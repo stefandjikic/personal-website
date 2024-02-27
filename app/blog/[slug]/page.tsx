@@ -34,7 +34,7 @@ const PostPage = (props: PostPageProps) => {
   console.log(post, "post");
 
   return (
-    <div className="mt-14 mb-24 mx-auto max-w-2xl">
+    <div className="mt-14 mb-24 mx-auto max-w-prose">
       <div className="max-w-2xl mb-20 ">
         <h1 className="text-2xl font-semibold text-cyan-50">
           {post.data.title}
