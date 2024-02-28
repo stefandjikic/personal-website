@@ -1,6 +1,6 @@
-import AboutSection from "./components/home/AboutSection";
-import BlogSection from "./components/home/BlogSection";
-import HeroComponent from "./components/home/HeroComponent";
+import AboutSection from "./_components/home/AboutSection";
+import BlogSection from "./_components/home/BlogSection";
+import HeroComponent from "./_components/home/HeroComponent";
 
 export default function Home() {
   return (

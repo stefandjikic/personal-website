@@ -1,4 +1,4 @@
-import { CustomMDX } from "@/app/components/mdx";
+import { CustomMDX } from "@/app/_components/mdx";
 import fs from "fs";
 import matter from "gray-matter";
 import { getAllPosts } from "../_getData";

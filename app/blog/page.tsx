@@ -1,5 +1,5 @@
 import { getAllPosts } from "./_getData";
-import MainBlogCard from "../components/blog/MainBlogCard";
+import MainBlogCard from "../_components/blog/MainBlogCard";
 
 const BlogPage = () => {
   const blogMetaData = getAllPosts();
