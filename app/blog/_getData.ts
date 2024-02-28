@@ -10,6 +10,7 @@ export const getAllPosts = (): IBlogPostMetaData[] => {
   const posts = mdFiles.map((file) => {
     const filesContent = fs.readFileSync(`${folderPath}${file}`, "utf-8");
     const matterResult = matter(filesContent);
+    // TODO: test out compileMDX from next-mdx-remote/rsc for adding frontmatter
     return {
       ...matterResult.data,
       slug: file.replace(".mdx", ""),
