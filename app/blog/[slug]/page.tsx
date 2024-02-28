@@ -33,13 +33,22 @@ const PostPage = (props: PostPageProps) => {
   const post = getPostContent(slug);
   console.log(post, "post");
 
+  const formattedDate = new Date(post?.data?.date).toLocaleDateString(
+    undefined,
+    {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    }
+  );
+
   return (
     <div className="mt-14 mb-24 mx-auto max-w-prose">
       <div className="max-w-2xl mb-20 ">
         <h1 className="text-2xl font-semibold text-cyan-50">
           {post.data.title}
         </h1>
-        <p>{post?.data?.date}</p>
+        <p className="text-sm text-cyan-100">{formattedDate}</p>
       </div>
 
       <article className="prose prose-invert prose-quoteless prose-cyan">
