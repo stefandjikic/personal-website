@@ -1,6 +1,7 @@
 import { CustomMDX } from "@/app/components/mdx";
 import fs from "fs";
 import matter from "gray-matter";
+import { getAllPosts } from "../_getData";
 
 const getPostContent = (slug: string) => {
   const path = `posts/${slug}.mdx`;
@@ -9,17 +10,15 @@ const getPostContent = (slug: string) => {
   return matterResult;
 };
 
-// TODO: Make pages static:
 export const generateStaticParams = async () => {
-  const posts = fs.readdirSync("posts");
-  const paths = posts.map((post) => {
+  const posts = getAllPosts();
+  return posts.map((post) => {
     return {
       params: {
-        slug: post.replace(".mdx", ""),
+        slug: post.slug,
       },
     };
   });
-  return paths;
 };
 
 interface PostPageProps {

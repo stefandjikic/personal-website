@@ -1,27 +1,8 @@
-import fs from "fs";
+import { getAllPosts } from "./_getData";
 import MainBlogCard from "../components/blog/MainBlogCard";
-import matter from "gray-matter";
-import { IBlogPostMetaData } from "../utils/interfaces";
-
-const getPostMetaData = (): IBlogPostMetaData[] => {
-  const folderPath = "posts/";
-  const files = fs.readdirSync(folderPath);
-  const mdFiles = files.filter((file) => file.endsWith(".mdx"));
-
-  const posts = mdFiles.map((file) => {
-    const filesContent = fs.readFileSync(`${folderPath}${file}`, "utf-8");
-    const matterResult = matter(filesContent);
-    return {
-      ...matterResult.data,
-      slug: file.replace(".mdx", ""),
-    } as IBlogPostMetaData;
-  });
-
-  return posts;
-};
 
 const BlogPage = () => {
-  const blogMetaData = getPostMetaData();
+  const blogMetaData = getAllPosts();
   const posts = blogMetaData.map((post) => {
     return <MainBlogCard key={post?.slug} post={post} />;
   });
