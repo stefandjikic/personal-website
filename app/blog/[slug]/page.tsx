@@ -1,11 +1,15 @@
-import { CustomMDX } from "@/app/_components/mdx";
+import { notFound } from 'next/navigation'
 import fs from "fs";
 import matter from "gray-matter";
 import { getAllPosts } from "../_getData";
+import { CustomMDX } from "@/app/_components/mdx";
 import { getFormattedDate } from "@/app/utils/helpers";
 
 const getPostContent = (slug: string) => {
   const path = `posts/${slug}.mdx`;
+  if (!fs.existsSync(path)) {
+    return null;
+  }
   const file = fs.readFileSync(path, "utf-8");
   const matterResult = matter(file);
   return matterResult;
@@ -29,6 +33,10 @@ interface PostPageProps {
 const PostPage = (props: PostPageProps) => {
   const slug = props.params.slug;
   const post = getPostContent(slug);
+
+  if (!post) {
+    return notFound();
+  }
 
   const formattedDate = getFormattedDate(post.data.date);
 
