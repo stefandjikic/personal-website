@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { IBlogPostMetaData } from "../utils/interfaces";
+import { sortBlogPostsByDate } from "../utils/helpers";
 
 export const getAllPosts = (): IBlogPostMetaData[] => {
   const folderPath = "posts/";
@@ -17,5 +18,11 @@ export const getAllPosts = (): IBlogPostMetaData[] => {
     } as IBlogPostMetaData;
   });
 
-  return posts;
+  return sortBlogPostsByDate(posts);
 };
+
+export const getLatestPosts = (limit: number): IBlogPostMetaData[] => {
+  const allPosts = getAllPosts();
+  return allPosts.slice(0, limit);
+}
+

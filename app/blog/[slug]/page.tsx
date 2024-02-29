@@ -2,6 +2,7 @@ import { CustomMDX } from "@/app/_components/mdx";
 import fs from "fs";
 import matter from "gray-matter";
 import { getAllPosts } from "../_getData";
+import { getFormattedDate } from "@/app/utils/helpers";
 
 const getPostContent = (slug: string) => {
   const path = `posts/${slug}.mdx`;
@@ -28,16 +29,8 @@ interface PostPageProps {
 const PostPage = (props: PostPageProps) => {
   const slug = props.params.slug;
   const post = getPostContent(slug);
-  console.log(post, "post");
 
-  const formattedDate = new Date(post?.data?.date).toLocaleDateString(
-    undefined,
-    {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    }
-  );
+  const formattedDate = getFormattedDate(post.data.date);
 
   return (
     <div className="mt-14 mb-24 mx-auto max-w-prose">
