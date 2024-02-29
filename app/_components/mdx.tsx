@@ -8,7 +8,9 @@ function Code({
   ...props
 }: JSX.IntrinsicAttributes & { children?: any }) {
   let codeHTML = highlight(children);
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  return (
+    <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props}></code>
+  );
 }
 
 // function Card(props) {
