@@ -10,8 +10,8 @@ const AboutSection = () => {
       <h3 className="text-xl uppercase text-cyan-100 text-center mb-10">
         About
       </h3>
-      <div className="grid grid-cols-2 gap-8">
-        <div className="row-span-2">
+      <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-8">
+        <div className="row-span-2 col-span-2 sm:col-span-1">
           <AboutCard />
         </div>
         <WorkCard />

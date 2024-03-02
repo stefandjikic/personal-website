@@ -15,17 +15,17 @@ const HeroComponent = () => {
       <div>
         <GradientComponent />
         <div className="flex gap-2 items-center">
-          <h2 className="text-5xl font-semibold">Hey</h2>
+          <h2 className="text-4xl sm:text-5xl font-semibold">Hey</h2>
           <Image src={hiIcon} alt="Hi" width={48} height={48} />
         </div>
-        <h2 className="text-5xl font-semibold mb-2">
+        <h2 className="text-4xl sm:text-5xl font-semibold mb-2">
           I&apos;m <span className={` text-cyan-100 font-bold`}>Stefan</span>
         </h2>
-        <p className="mt-6 text-3xl ">I&apos;m a software developer.</p>
-        <p className="mb-2 text-2xl">
+        <p className="mt-6 text-2xl sm:text-3xl ">I&apos;m a software developer.</p>
+        <p className="mb-2 text-xl sm:text-2xl">
           I love building stuff and solving problems.
         </p>
-        <p className="mt-6 text-2xl my-4 mb-10">Welcome to my space!</p>
+        <p className="mt-6 text-lg sm:text-2xl my-4 mb-10">Welcome to my space!</p>
         <SocialButtons />
       </div>
       <div className="backdrop-blur-sm bg-white/5 rounded-md relative ">
