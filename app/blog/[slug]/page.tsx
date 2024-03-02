@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
 import fs from "fs";
 import matter from "gray-matter";
 import { getAllPosts } from "../_getData";
@@ -27,6 +28,29 @@ export const generateStaticParams = async () => {
 interface PostPageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata | undefined> {
+  const post = getAllPosts().find((post) => post.slug === params.slug);
+  if (!post) {
+    return;
+  }
+
+  return {
+    title: post?.title,
+    description: post?.description,
+    openGraph: {
+      title: post?.title,
+      description: post?.description,
+      publishedTime: post?.date,
+      type: "article",
+      locale: "en_US",
+      url: `https://stefandjikic.com/blog/${post?.slug}`,
+      siteName: "Stefan Djikic",
+    },
   };
 }
 
