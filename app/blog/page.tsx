@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import { getAllPosts } from "./_getData";
 import MainBlogCard from "../_components/blog/MainBlogCard";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "A collection of my blog posts.",
+};
 
 const BlogPage = () => {
   const blogMetaData = getAllPosts();

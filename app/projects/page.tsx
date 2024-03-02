@@ -1,6 +1,11 @@
-import React from "react";
+import { Metadata } from "next";
 import ProjectCard from "../_components/cards/ProjectCard";
 import { PROJECTS_DATA } from "../utils/projects_data";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "A collection of my personal projects.",
+};
 
 const ProjectsPage = () => {
   return (

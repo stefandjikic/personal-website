@@ -7,8 +7,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Stefan Djikic",
-  description: "Building engaging and scalable web and mobile apps ",
+  title: {
+    default: "Stefan Djikic",
+    template: '%s | Stefan Djikic',
+  },
+  description: "Developer and creator | Building engaging and scalable web and mobile apps.",
+  openGraph: {
+    title: "Stefan Djikic",
+    description: "Developer and creator | Building engaging and scalable web and mobile apps.",
+    type: "website",
+    locale: "en_US",
+    url: "https://stefandjikic.com",
+    siteName: "Stefan Djikic",
+  }
 };
 
 export default function RootLayout({

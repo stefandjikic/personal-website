@@ -1,7 +1,12 @@
 import Image from "next/image";
-import React from "react";
+import { Metadata } from "next";
 import k7techImg from "@/app/assets/images/k7_logo.png";
 import codeImg from "@/app/assets/images/code_logo.png";
+
+export const metadata: Metadata = {
+  title: "Work",
+  description: "A summary of my work experience.",
+};
 
 const WorkPage = () => {
   return (
