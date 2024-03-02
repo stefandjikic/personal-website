@@ -21,8 +21,17 @@ export const getAllPosts = (): IBlogPostMetaData[] => {
   return sortBlogPostsByDate(posts);
 };
 
+export const getPostContent = (slug: string) => {
+  const path = `posts/${slug}.mdx`;
+  if (!fs.existsSync(path)) {
+    return null;
+  }
+  const file = fs.readFileSync(path, "utf-8");
+  const matterResult = matter(file);
+  return matterResult;
+};
+
 export const getLatestPosts = (limit: number): IBlogPostMetaData[] => {
   const allPosts = getAllPosts();
   return allPosts.slice(0, limit);
-}
-
+};

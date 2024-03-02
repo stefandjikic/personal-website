@@ -1,21 +1,11 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import fs from "fs";
-import matter from "gray-matter";
-import { getAllPosts } from "../_getData";
+import { getAllPosts, getPostContent } from "../_getData";
 import { CustomMDX } from "@/app/_components/mdx";
 import { getFormattedDate } from "@/app/utils/helpers";
 
-const getPostContent = (slug: string) => {
-  const path = `posts/${slug}.mdx`;
-  if (!fs.existsSync(path)) {
-    return null;
-  }
-  const file = fs.readFileSync(path, "utf-8");
-  const matterResult = matter(file);
-  return matterResult;
-};
 
+// staticly generate routes instead of server side rendering - on demand at request time
 export const generateStaticParams = async () => {
   const posts = getAllPosts();
   return posts.map((post) => {
