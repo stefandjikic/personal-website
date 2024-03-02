@@ -11,7 +11,7 @@ const ToolboxCard = () => {
       <h3 className="text-cyan-100 translate-y-0 group-hover:-translate-y-1 transition duration-300">
         Toolbox
       </h3>
-      <p className="absolute top-14 sm:top-2 right-1 sm:right-2 text-[8px] sm:text-[10px] text-cyan-300/70 p-1 sm:p-2 rounded-md border border-cyan-300/20 -translate-y-12 group-hover:translate-y-0 transition duration-300 ">
+      <p className="absolute top-2 right-2 text-[7px] sm:text-[10px] text-cyan-300/70 p-1 sm:p-2 rounded-md border border-cyan-300/20 sm:-translate-y-12 group-hover:translate-y-0 transition duration-300 ">
         Comming soon!
       </p>
     </div>
