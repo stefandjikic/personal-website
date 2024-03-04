@@ -1,0 +1,144 @@
+---
+title: 'React 19 - The next big thing'
+date: '2024-03-03'
+description: 'React 19 is on its way, bringing a wave of new features designed to enhance performance, simplify development, and improve the overall developer experience.'
+category: 'React'
+author: 'Stefan Dj.'
+---
+
+Exciting news for React developers!
+<a href="https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024" target="_blank" rel="noopener">React 19</a> is coming with new features to improve performance, simplify development, and enhance the overall developer experience. 
+
+In this article, I'll **highlight** features that are expected to be included in React 19, and than focus on two of my favorite ones.
+
+## React 19 - Highlights
+
+- The biggest change is that React 19 will have a **Compiler**. This means that React will automatically add its own memorization for things like `useMemo`, `useCallback`, and the `memo` function. 
+(The React team is already using compiler internally and it is powering instagram.com in production!)
+
+- The `use client` and `use server` directives become stable, enabling Frameworks other than Next.js to utilize them.
+
+- **Actions** are now stable and work on client and server side. React is making it easier to handle life cycle of a form data with hooks like `useFormStatus` and `useFormState`.
+
+- Additional hook that's being added is `useOptimistic`. This hook enables optimistic updates, allowing immediate visual feedback before server processing.
+For example, if you click on a like button, the like count will increase immediately, and then the server will process the request. If the request fails, the count will be reverted to its original value.
+
+- **SEO improvements** - **Document metadata section:** This allows you to put a `title` tag, `meta` tag, or `link` tag anywhere inside of your React component and it will be automatically added to the head of the document or wherever it needs to be.
+
+- **Suspense:** This is a new feature in React 18 that allows you to stream in data to be rendered. React 19 is making improvements to suspense by making sure that it waits for certain things like **style** tags, **links**, and **scripts** to load before the page is rendered.
+
+- **Forward refs:** You will no longer need to use `forwardRef` in React 19. The `ref` prop will be automatically passed to every component.
+
+- `use hook`: This is a new hook that allows you to asynchronously load things, such as JavaScript files, promises, or context.
+
+
+## COMPILER - The best thing in the next big thing
+
+*Current state of React - v18*
+
+As we all know, React can sometimes re-render too much when state changes. In React 18, one of the ways to optimize performance and avoid unnecessary re-renders is by using the `useMemo` hook. 
+This hook allows you to memoize the result of a function, meaning it will only re-compute the value if the dependencies passed to the hook change.
+
+**Example:** 
+Let's say you have a component that displays a list of items. Each item has a price, and you want to calculate a discounted price based on a specific discount percentage. 
+This calculation might be expensive if it involves complex logic or API calls.
+
+Here's how you would use `useMemo` to avoid re-calculating the discounted price on every render if the `items` or `discount` prop doesn't change:
+
+```jsx
+function MyComponent({ items, discount }) {
+  const discountedItems = useMemo(() => {
+    return items.map(item => ({
+      ...item,
+      discountedPrice: item.price * (1 - discount),
+    }));
+  }, [items, discount]); // Dependency array
+
+  return (
+    <ul>
+      {discountedItems.map(item => (
+        <li key={item.id}>
+          {item.name} - ${item.discountedPrice}
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+If we look the other frameworks such as Vue or Svelte, they don’t do stuff like this. 
+For example, in Vue they have computed function, but without dependencies array.
+
+***Vue* example:**
+```vue
+<template>
+  <ul>
+    <li v-for="item in discountedItems" :key="item.id">
+      {{ item.name }} - ${{ item.discountedPrice }}
+    </li>
+  </ul>
+</template>
+
+<script>
+export default {
+  props: {
+    items: Array,
+    discount: Number,
+  },
+  computed: {
+    discountedItems: function () {
+      return this.items.map(item => ({
+        ...item,
+        discountedPrice: item.price * (1 - this.discount),
+      }));
+    },
+  },
+};
+</script>
+
+```
+
+The reason why these frameworks let us write more simplified code is because they have a compiler, unlike React which is runtime based.
+Missing of compile step in react created many performance issues which led to creating hooks like `useMemo` and `useCallback` to help developers manually handle them.
+
+Now when React gets it’s own Compiler, it means that hooks like `useMemo` ,  `useCallback` , or `memo` function are thing of the past! 
+All the memoization and optimization will happen automatically in the background, without the need for developers to manually handle it.
+
+## Dealing with PROMISES - The next best thing in the next big thing
+
+In React server components, we can use `async/await` to fetch data directly in a component. That's great but we cannot do it in a client side component.
+Well, with React 19 we still cannot do that, but what we can do is use a `use` hook. `use` works with promises and context.
+
+In case of **context**, this will probably make `useContext` hook obsolete. Unlike `useContext`, which  must be called at the top level of your component, we will be able to use `use` even in loops and conditionals.
+
+In case of **promises**, `use` allows us to use value of a resolved promise directly in a UI. 
+Since a promise is asynchronous and the value is initially pending, we can use `Suspense Boundary` to handle loading state and `Error Boundary` in case of throwing an error.
+
+```jsx
+const promise = fetch("https://api.example.dev");
+
+export function HomePage({promise }) {
+  const user = use(promise);
+
+  return (
+     <ErrorBoundary fallback={<p>An error occurred</p>}>
+        <Suspense fallback={<p> & Downloading... </p>} >
+          <UserProfile user={user} />
+      </Suspense>
+    </ErrorBoundary>  
+  );
+}
+```
+
+## Conclusion
+
+React 19 is bringing a lot of exciting features that will make our lives as developers easier.
+The compiler will take care of memoization and optimization, and the `use` hook will allow us to work with promises and context in a more flexible way.
+
+<Card emoji="💡">
+  <p>
+  Lot of these features were released in the Canary channel, which is a pre-release channel that tracks the main branch of the React repository.
+  If you want to find out more about React 19, make sure to check out the <a href="https://react.dev/blog/2024/02/15/react-labs-what-we-have-been-working-on-february-2024" target="_blank" rel="noopener">official blog post</a>.
+  </p>
+</Card>
+import { channel } from "diagnostics_channel"
