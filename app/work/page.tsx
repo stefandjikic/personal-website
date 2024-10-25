@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import k7techImg from "@/app/assets/images/k7_logo.png";
 import codeImg from "@/app/assets/images/code_logo.png";
+import rawfishImg from "@/app/assets/images/rawfish_logo.png";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -14,6 +15,48 @@ const WorkPage = () => {
       <h1 className="text-3xl text-center font-semibold mb-16 text-cyan-100">
         Work Experience
       </h1>
+      <section className="mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
+          <div className="col-span-2">
+            <div className="mb-6 flex gap-4 items-center">
+              <div className="flex sm:hidden justify-center items-center w-[60px] h-[60px] rounded-md backdrop-blur-sm p-2 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+                <a href="https://rawfish.com/en/" target="_blank" rel="noreferrer">
+                  <Image
+                    src={rawfishImg}
+                    alt="Rawfish"
+                    className="group-hover:scale-105 transition duration-200"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              </div>
+              <div>
+                <h2 className="text-cyan-50/70 text-sm">
+                  React Native Developer ·{" "}
+                  <span className="text-xs">Contract</span>
+                </h2>
+                <h3 className="text-2xl font-bold text-cyan-100">Rawfish</h3>
+              </div>
+            </div>
+            <p className="leading-7 font-light">
+              Participate in developing the Amazon Fire TV app for one of the
+              largest Italian mass media companies.
+            </p>
+          </div>
+          <div className="hidden sm:flex  justify-center items-center w-[200px] h-[200px] ml-auto rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l border border-cyan-300/10 hover:border-cyan-300/20 group transition duration-200">
+            <a href="https://rawfish.com/en/" target="_blank" rel="noreferrer">
+              <Image
+                src={rawfishImg}
+                alt="Rawfish"
+                className="group-hover:scale-105 transition duration-200"
+                width={150}
+                height={50}
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="mb-20">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-between items-center mb-10">
           <div className="col-span-2">
@@ -34,7 +77,10 @@ const WorkPage = () => {
                 </a>
               </div>
               <div>
-                <h2 className="text-cyan-50/70 text-sm">Frontend Developer</h2>
+                <h2 className="text-cyan-50/70 text-sm">
+                  Frontend Developer ·{" "}
+                  <span className="text-xs">Full Time</span>
+                </h2>
                 <h3 className="text-2xl font-bold text-cyan-100">K7 Tech</h3>
               </div>
             </div>
@@ -79,7 +125,8 @@ const WorkPage = () => {
               </div>
               <div>
                 <h2 className="text-cyan-50/70 text-sm">
-                  Frontend Development Course Lecturer
+                  Frontend Development Course Lecturer ·{" "}
+                  <span className="text-xs">Contract</span>
                 </h2>
                 <h3 className="text-2xl font-bold text-cyan-100">
                   Code by Comtrade
