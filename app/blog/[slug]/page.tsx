@@ -4,7 +4,6 @@ import { getAllPosts, getPostContent } from "../_getData";
 import { CustomMDX } from "@/app/_components/mdx";
 import { getFormattedDate } from "@/app/utils/helpers";
 
-
 // staticly generate routes instead of server side rendering - on demand at request time
 export const generateStaticParams = async () => {
   const posts = getAllPosts();
@@ -53,6 +52,7 @@ const PostPage = (props: PostPageProps) => {
   }
 
   const formattedDate = getFormattedDate(post.data.date);
+  const formattedLastUpdated = getFormattedDate(post.data.lastmod);
 
   return (
     <div className="mt-14 mb-24 mx-auto max-w-prose">
@@ -62,10 +62,14 @@ const PostPage = (props: PostPageProps) => {
         </h1>
         <p className="text-sm text-cyan-100">{formattedDate}</p>
       </div>
-
       <article className="prose prose-invert prose-quoteless prose-cyan">
         <CustomMDX source={post.content} />
       </article>
+      {post.data.lastmod && (
+        <p className="text-xs italic text-cyan-100">
+          Last updated: {formattedLastUpdated}
+        </p>
+      )}
     </div>
   );
 };
