@@ -34,11 +34,15 @@ export async function generateMetadata({
     openGraph: {
       title: post?.title,
       description: post?.description,
-      publishedTime: post?.date,
+      publishedTime: new Date(post?.date).toISOString(),
+      modifiedTime: post?.lastmod
+        ? new Date(post?.lastmod).toISOString()
+        : new Date(post?.date).toISOString(),
       type: "article",
       locale: "en_US",
       url: `https://stefandjikic.com/blog/${post?.slug}`,
       siteName: "Stefan Djikic",
+      authors: post?.author ? [post.author] : [],
     },
   };
 }
