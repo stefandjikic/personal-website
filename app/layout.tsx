@@ -8,20 +8,25 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://stefandjikic.com'),
+  metadataBase: new URL("https://stefandjikic.com"),
   title: {
     default: "Stefan Djikic",
-    template: '%s | Stefan Djikic',
+    template: "%s | Stefan Djikic",
   },
-  description: "Developer and creator | Building engaging and scalable web and mobile apps.",
+  description:
+    "Developer and creator | Building engaging and scalable web and mobile apps.",
   openGraph: {
     title: "Stefan Djikic",
-    description: "Developer and creator | Building engaging and scalable web and mobile apps.",
+    description:
+      "Developer and creator | Building engaging and scalable web and mobile apps.",
     type: "website",
     locale: "en_US",
     url: "https://stefandjikic.com",
     siteName: "Stefan Djikic",
-  }
+  },
+  verification: {
+    google: process.env.GOOGLE_VERIFICATION || "",
+  },
 };
 
 export default function RootLayout({
