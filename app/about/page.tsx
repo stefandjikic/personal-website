@@ -102,7 +102,7 @@ const AboutPage = () => {
           developers. I mainly focus on teaching React and Next.js.
         </p>
         <div className="mt-16">
-          <Link href="/work" className="text-center text-cyan-100">
+          <Link href="/work" className="text-center text-cyan-100 hover:underline">
             See more about my work experience
           </Link>
         </div>
