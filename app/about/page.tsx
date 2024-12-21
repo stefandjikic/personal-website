@@ -55,7 +55,7 @@ const AboutPage = () => {
           two months later, my first full-time job as a frontend developer!
         </p>
       </section>
-      <section className="mb-20">
+      <section className="mb-10">
         <h2 className="text-2xl my-8 text-cyan-100">What I do now...</h2>
         <p className="mb-6 text-gray-300/90">
           <span className="text-cyan-200/90">Currently</span>, I work at{" "}
@@ -101,8 +101,27 @@ const AboutPage = () => {
           where I create educational content and projects for aspiring
           developers. I mainly focus on teaching React and Next.js.
         </p>
-        <div className="mt-16">
-          <Link href="/work" className="text-center text-cyan-100 hover:underline">
+      </section>
+      <section className="mb-20">
+        <h2 className="text-2xl my-8 text-cyan-100">Contact</h2>
+        <p className="mb-6 text-gray-300/90">
+          If you have any questions or just want to say hi, feel free to reach
+          out to me via email: {""}
+          <a
+            className=" underline"
+            target="_blank"
+            rel="noreferrer"
+            href="mailto:stefandjikic@pm.me"
+          >
+            stefandjikic@pm.me
+          </a>
+          {""} or on social media.
+        </p>
+        <div className="mt-10">
+          <Link
+            href="/work"
+            className="text-center text-cyan-100 hover:underline"
+          >
             See more about my work experience
           </Link>
         </div>
