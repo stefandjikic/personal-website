@@ -6,4 +6,5 @@ export interface IBlogPostMetaData {
   category: string;
   author?: string;
   slug: string;
+  tags?: string[];
 }
