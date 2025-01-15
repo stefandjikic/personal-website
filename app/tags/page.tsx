@@ -1,6 +1,12 @@
 import React from "react";
 import { getAllPosts } from "../blog/_getData";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Tags",
+  description: "A collection of tags used in my blog posts.",
+};
 
 const TagsPage = () => {
   const posts = getAllPosts();
