@@ -35,3 +35,27 @@ export const getLatestPosts = (limit: number): IBlogPostMetaData[] => {
   const allPosts = getAllPosts();
   return allPosts.slice(0, limit);
 };
+
+export const getTags = (): string[] => {
+  const posts = getAllPosts();
+  const tags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));
+  return tags;
+};
+
+export const getTagsWithCount = (): { tag: string; count: number }[] => {
+  const posts = getAllPosts();
+  const tags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));
+  const tagsWithCount =
+    tags.map((tag) => {
+      return {
+        tag,
+        count: posts.filter((post) => post.tags?.includes(tag)).length,
+      };
+    }) || [];
+  return tagsWithCount;
+};
+
+export const getPostsByTag = (tag: string): IBlogPostMetaData[] => {
+  const posts = getAllPosts();
+  return posts.filter((post) => post.tags?.includes(tag));
+};

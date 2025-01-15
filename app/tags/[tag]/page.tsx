@@ -1,5 +1,5 @@
 import MainBlogCard from "@/app/_components/blog/MainBlogCard";
-import { getAllPosts } from "@/app/blog/_getData";
+import { getAllPosts, getPostsByTag } from "@/app/blog/_getData";
 import { Metadata } from "next";
 
 interface TagPageProps {
@@ -19,9 +19,7 @@ export async function generateMetadata({
 
 const TagPage = ({ params }: TagPageProps) => {
   const tag = params?.tag;
-  const posts = getAllPosts().filter((post) =>
-    post.tags?.includes(tag as string)
-  );
+  const posts = getPostsByTag(tag);
 
   return (
     <div className="mt-14 mx-auto max-w-2xl">

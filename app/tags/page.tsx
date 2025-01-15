@@ -1,5 +1,5 @@
 import React from "react";
-import { getAllPosts } from "../blog/_getData";
+import { getAllPosts, getTagsWithCount } from "../blog/_getData";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -9,8 +9,7 @@ export const metadata: Metadata = {
 };
 
 const TagsPage = () => {
-  const posts = getAllPosts();
-  const tags = Array.from(new Set(posts.flatMap((post) => post.tags || [])));
+  const tags = getTagsWithCount();
 
   return (
     <div className="mt-14 ">
@@ -18,13 +17,15 @@ const TagsPage = () => {
         Tags
       </h1>
       <div className="flex flex-wrap justify-center">
+        {/* TODO: Convert to component */}
         {tags.map((tag) => (
           <Link
-            className="text-lg bg-cyan-700 text-white rounded-full px-4 py-2 m-2 hover:bg-cyan-800"
-            key={tag}
-            href={`/tags/${tag}`}
+            className="px-4 py-2 m-2 rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l"
+            key={tag.tag}
+            href={`/tags/${tag.tag}`}
           >
-            {tag}
+            {tag.tag}
+            <span className="text-xs ml-2 text-cyan-100">({tag.count})</span>
           </Link>
         ))}
       </div>
