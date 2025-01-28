@@ -67,6 +67,7 @@ const PostPage = (props: PostPageProps) => {
           {post.data.title}
         </h1>
         <p className="text-xs text-cyan-100">{formattedDate}</p>
+        {/* TODO: Consider component */}
         {tags && (
           <div className="flex flex-wrap gap-2 mt-4">
             {post.data.tags.map((tag: string) => (
