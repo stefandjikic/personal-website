@@ -63,10 +63,18 @@ const PostPage = (props: PostPageProps) => {
   return (
     <div className="mt-14 mb-24 mx-auto max-w-prose">
       <div className="max-w-2xl mb-16 ">
-        <h1 className="text-2xl font-semibold text-cyan-50">
+        <h1 className="text-2xl mb-2 font-semibold text-cyan-50">
           {post.data.title}
         </h1>
-        <p className="text-xs text-cyan-100">{formattedDate}</p>
+        {post.data.lastmod ? (
+          <p className="text-xs italic text-cyan-100">
+            Last updated: {formattedLastUpdated}
+          </p>
+        ) : (
+          <p className="text-xs text-cyan-100 italic">
+            Posted: {formattedDate}
+          </p>
+        )}
         {/* TODO: Consider component */}
         {tags && (
           <div className="flex flex-wrap gap-2 mt-4">
@@ -85,11 +93,6 @@ const PostPage = (props: PostPageProps) => {
       <article className="prose prose-invert prose-quoteless prose-cyan">
         <CustomMDX source={post.content} />
       </article>
-      {post.data.lastmod && (
-        <p className="text-xs italic text-cyan-100">
-          Last updated: {formattedLastUpdated}
-        </p>
-      )}
     </div>
   );
 };
