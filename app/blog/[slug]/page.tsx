@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getAllPosts, getPostContent } from "../_getData";
@@ -57,14 +58,28 @@ const PostPage = (props: PostPageProps) => {
 
   const formattedDate = getFormattedDate(post.data.date);
   const formattedLastUpdated = getFormattedDate(post.data.lastmod);
+  const tags = post.data?.tags || [];
 
   return (
     <div className="mt-14 mb-24 mx-auto max-w-prose">
-      <div className="max-w-2xl mb-20 ">
+      <div className="max-w-2xl mb-16 ">
         <h1 className="text-2xl font-semibold text-cyan-50">
           {post.data.title}
         </h1>
-        <p className="text-sm text-cyan-100">{formattedDate}</p>
+        <p className="text-xs text-cyan-100">{formattedDate}</p>
+        {tags && (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {post.data.tags.map((tag: string) => (
+              <Link
+                key={tag}
+                href={`/tags/${tag}`}
+                className="px-2 py-1 bg-cyan-950/20 text-cyan-100 text-xs rounded-md hover:bg-cyan-100/10"
+              >
+                {tag}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
       <article className="prose prose-invert prose-quoteless prose-cyan">
         <CustomMDX source={post.content} />
