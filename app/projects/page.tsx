@@ -22,6 +22,7 @@ const ProjectsPage = () => {
           projectUrl={project.projectUrl}
           sourceUrl={project.sourceUrl}
           projectImage={project.projectImage}
+          githubStats={project?.githubStats}
         />
       ))}
     </div>

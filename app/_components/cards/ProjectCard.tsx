@@ -4,6 +4,7 @@ import SocialIcon from "../social/SocialIcon";
 import linkImg from "@/app/assets/icons/link.svg";
 import ghImg from "@/app/assets/icons/gh-fill.svg";
 import ProjectCardGradient from "../gradients/ProjectCardGradient";
+import GithubStats from "../GithubStats";
 
 interface ProjectCardProps {
   name: string;
@@ -11,6 +12,7 @@ interface ProjectCardProps {
   projectUrl: string;
   sourceUrl: string | null;
   projectImage: string | StaticImageData;
+  githubStats?: boolean;
 }
 
 const ProjectCard = ({
@@ -19,6 +21,7 @@ const ProjectCard = ({
   projectUrl = "",
   sourceUrl = "",
   projectImage,
+  githubStats,
 }: ProjectCardProps) => {
   return (
     <section className="text-gray-200 mb-20">
@@ -32,11 +35,12 @@ const ProjectCard = ({
             {description ||
               "A short description of the project. This could be a summary of the project's goals and the technologies used."}
           </p>
-          <div className="flex gap-4">
+          <div className="flex items-center gap-4">
             <SocialIcon href={projectUrl} icon={linkImg} alt="Project Link" />
             {sourceUrl && (
               <SocialIcon href={sourceUrl} icon={ghImg} alt="Source Code" />
             )}
+            {sourceUrl && githubStats && <GithubStats repoUrl={sourceUrl} />}
           </div>
         </div>
         <div className="roudned-md relative group">

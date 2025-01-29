@@ -13,11 +13,12 @@ export const PROJECTS_DATA = {
         'A template for creating a blog with a CMS using Next.js and Sanity. The template includes a blog with posts, tags and comments. The CMS is used for managing posts, comments and tags.',
       projectUrl: 'https://next-cms-blog-ce.vercel.app/',
       sourceUrl: 'https://github.com/stefandjikic/next-cms-blog',
-      projectImage: 'https://github.com/stefandjikic/next-cms-blog/assets/65912958/2576b109-d592-4321-9870-0db29d769a3e'
+      projectImage: 'https://github.com/stefandjikic/next-cms-blog/assets/65912958/2576b109-d592-4321-9870-0db29d769a3e',
+      githubStats: true,
     },
     {
       id: 2,
-      name: "Kulijana",
+      name: "News Platform - Kulijana",
       description:
         "A news-like platform where users can read about interseting topics from around the world. The app is built wiht Next.js, GraphQl, Chakra UI and it is powerd by Hygraph CMS. All data, includiing articles, categories and navigation items are managed from the CMS.",
       projectUrl: "https://www.kulijana.rs",
@@ -26,7 +27,7 @@ export const PROJECTS_DATA = {
     },
     {
       id: 3,
-      name: "Med i Dred",
+      name: "E-commerce Website - Medidred",
       description:
         "A website with e-commerce solution, created for a YouTube channel that focuses on beekeeping and honey production. The website is built with Next.js, Tailwind and it is powerd by Sanity CMS. The website also utilizes Sanity for managing orders and products on the website.",
       projectUrl: "https://medidred.com",
