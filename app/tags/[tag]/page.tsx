@@ -1,6 +1,13 @@
 import MainBlogCard from "@/app/_components/blog/MainBlogCard";
-import { getAllPosts, getPostsByTag } from "@/app/blog/_getData";
+import { getPostsByTag, getTags } from "@/app/blog/_getData";
 import { Metadata } from "next";
+
+export const generateStaticParams = async () => {
+  const tags = getTags();
+  return tags.map((tag) => ({
+    tag,
+  }));
+};
 
 interface TagPageProps {
   params: {
