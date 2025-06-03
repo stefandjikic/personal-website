@@ -9,7 +9,7 @@ import GithubStats from "../GithubStats";
 interface ProjectCardProps {
   name: string;
   description: string;
-  projectUrl: string;
+  projectUrl: string | null;
   sourceUrl: string | null;
   projectImage: string | StaticImageData;
   githubStats?: boolean;
@@ -36,7 +36,13 @@ const ProjectCard = ({
               "A short description of the project. This could be a summary of the project's goals and the technologies used."}
           </p>
           <div className="flex items-center gap-4">
-            <SocialIcon href={projectUrl} icon={linkImg} alt="Project Link" />
+            {projectUrl && (
+              <SocialIcon
+                href={projectUrl}
+                icon={linkImg}
+                alt="Project Link"
+              />
+            )}
             {sourceUrl && (
               <SocialIcon href={sourceUrl} icon={ghImg} alt="Source Code" />
             )}
@@ -44,7 +50,7 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="roudned-md relative group">
-          <a href={projectUrl} target="_blank" rel="noreferrer">
+          <a href={projectUrl || sourceUrl!} target="_blank" rel="noreferrer">
             <div className="absolute opacity-50 w-full h-full rounded-md bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l transition duration-300"></div>
             <ProjectCardGradient />
             <Image

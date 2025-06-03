@@ -67,7 +67,16 @@ const AboutPage = () => {
           >
             K7 Tech{" "}
           </a>
-          as a full-time frontend developer. My responsibilities include
+          (acquired by{" "}
+          <a
+            className="underline"
+            href="https://appify.digital/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Appify Digital
+          </a>
+          ) as a full-time frontend developer. My responsibilities include
           building web and mobile apps, as well as handling non-technical tasks
           such as client communication during the project planning phase.
         </p>

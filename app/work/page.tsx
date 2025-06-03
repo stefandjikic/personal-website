@@ -27,7 +27,7 @@ const WorkPage = () => {
         mobileImgHeight={50}
       >
         <p className="leading-7 font-light">
-          Participating in development of the Amazon Fire TV app for{" "}
+          Participating in development of the Amazon Fire TV, tvOs and Android TV app for{" "}
           <a
             href="https://mediasetinfinity.mediaset.it/"
             target="_blank"
@@ -39,7 +39,7 @@ const WorkPage = () => {
         </p>
       </WorkSection>
       <WorkSection
-        company="K7 Tech"
+        company="K7 Tech (Acquired by Appify Digital)"
         role="Frontend Developer"
         type="Full Time"
         image={k7techImg}
