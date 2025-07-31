@@ -1,5 +1,6 @@
 import kulijanaImg from "@/app/assets/images/kulijana.webp";
 import medidredImg from "@/app/assets/images/medidred.webp";
+import adventureMotohubImg from "@/app/assets/images/adventuremotohub.webp";
 import ceImg from "@/app/assets/images/ce-screen.webp";
 
 export const PROJECTS_DATA = {
@@ -8,25 +9,38 @@ export const PROJECTS_DATA = {
   projects: [
     {
       id: 1,
-      name: 'Next.js Blog & CMS Template',
+      name: "Next.js Blog & CMS Template",
       description:
-        'A template for creating a blog with a CMS using Next.js and Sanity. The template includes a blog with posts, tags and comments. The CMS is used for managing posts, comments and tags.',
-      projectUrl: 'https://next-cms-blog-ce.vercel.app/',
-      sourceUrl: 'https://github.com/stefandjikic/next-cms-blog',
-      projectImage: 'https://github.com/stefandjikic/next-cms-blog/assets/65912958/2576b109-d592-4321-9870-0db29d769a3e',
+        "A template for creating a blog with a CMS using Next.js and Sanity. The template includes a blog with posts, tags and comments. The CMS is used for managing posts, comments and tags.",
+      projectUrl: "https://next-cms-blog-ce.vercel.app/",
+      sourceUrl: "https://github.com/stefandjikic/next-cms-blog",
+      projectImage:
+        "https://github.com/stefandjikic/next-cms-blog/assets/65912958/2576b109-d592-4321-9870-0db29d769a3e",
       githubStats: true,
     },
     {
       id: 2,
       name: "Next RSVP Template",
-      description: "A template for creating a RSVP app with Next.js, Resend and Supabase. The template includes a RSVP form, a list of RSVPs and a dashboard for managing RSVPs.",
+      description:
+        "A template for creating a RSVP app with Next.js, Resend and Supabase. The template includes a RSVP form, a list of RSVPs and a dashboard for managing RSVPs.",
       projectUrl: null,
       sourceUrl: "https://github.com/stefandjikic/rsvp-next-template",
-      projectImage: "https://github.com/user-attachments/assets/874a23d2-8e8a-4b31-9185-d39dee1d4197",
+      projectImage:
+        "https://github.com/user-attachments/assets/874a23d2-8e8a-4b31-9185-d39dee1d4197",
       githubStats: true,
     },
     {
       id: 3,
+      name: "Adventure Moto Hub",
+      description:
+        "A website for a motorcycle news and reviews. The website is built with Next.js 15, Tailwind and it is powerd by Sanity CMS for managing content. The website also utilizes news aggregation through RSS feeds.",
+      projectUrl: "https://adventuremotohub.com",
+      sourceUrl: null,
+      projectImage: adventureMotohubImg,
+      githubStats: false,
+    },
+    {
+      id: 4,
       name: "News Platform - Kulijana",
       description:
         "A news-like platform where users can read about interseting topics from around the world. The app is built wiht Next.js, GraphQl, Chakra UI and it is powerd by Hygraph CMS. All data, includiing articles, categories and navigation items are managed from the CMS.",
@@ -36,7 +50,7 @@ export const PROJECTS_DATA = {
       projectImage: kulijanaImg,
     },
     {
-      id: 4,
+      id: 5,
       name: "E-commerce Website - Medidred",
       description:
         "A website with e-commerce solution, created for a YouTube channel that focuses on beekeeping and honey production. The website is built with Next.js, Tailwind and it is powerd by Sanity CMS. The website also utilizes Sanity for managing orders and products on the website.",
@@ -45,7 +59,7 @@ export const PROJECTS_DATA = {
       projectImage: medidredImg,
     },
     {
-      id: 5,
+      id: 6,
       name: "YouTube Channel - Codewalk Empire",
       description:
         "A YouTube channel where I share my knowledge and experience with web development. I create tutorials, code walkthroughs and other content related to web development and programming. Visit the channel to check out the content I've created so far and subscribe if you like it :)",
