@@ -20,7 +20,7 @@ const TagsPage = () => {
         {/* TODO: Convert to component */}
         {tags.map((tag) => (
           <Link
-            className="px-4 py-2 m-2 rounded-md backdrop-blur-sm p-4 bg-gradient-to-r text-cyan-100 from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l"
+            className="px-4 py-2 m-2 rounded-md backdrop-blur-xs p-4 bg-linear-to-r text-cyan-100 from-indigo-600/20 to-cyan-800/20 hover:bg-linear-to-l"
             key={tag.tag}
             href={`/tags/${tag.tag}`}
           >

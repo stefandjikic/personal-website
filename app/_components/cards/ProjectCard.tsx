@@ -51,7 +51,7 @@ const ProjectCard = ({
         </div>
         <div className="roudned-md relative group">
           <a href={projectUrl || sourceUrl!} target="_blank" rel="noreferrer">
-            <div className="absolute opacity-50 w-full h-full rounded-md bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l transition duration-300"></div>
+            <div className="absolute opacity-50 w-full h-full rounded-md bg-linear-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-linear-to-l transition duration-300"></div>
             <ProjectCardGradient />
             <Image
               src={projectImage || "/images/placeholder.png"}

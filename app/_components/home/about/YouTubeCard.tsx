@@ -9,7 +9,7 @@ const YouTubeCard = () => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex gap-6 items-center h-auto sm:h-40 rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l group border border-cyan-300/10 hover:border-cyan-300/20 transition duration-200">
+      <div className="flex gap-6 items-center h-auto sm:h-40 rounded-md backdrop-blur-xs p-4 bg-linear-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-linear-to-l group border border-cyan-300/10 hover:border-cyan-300/20 transition duration-200">
         <Image
           src={ce}
           alt="YouTube"

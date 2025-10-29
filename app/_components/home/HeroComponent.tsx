@@ -30,9 +30,9 @@ const HeroComponent = () => {
         </p>
         <SocialButtons />
       </div>
-      <div className="backdrop-blur-sm bg-white/5 rounded-md relative ">
+      <div className="backdrop-blur-xs bg-white/5 rounded-md relative ">
         <GradientComponent />
-        <div className="rounded-md bg-gradient-to-r from-indigo-600 to-cyan-800">
+        <div className="rounded-md bg-linear-to-r from-indigo-600 to-cyan-800">
           <Image
             src={me}
             alt="Stefan Djikic"

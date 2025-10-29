@@ -11,7 +11,7 @@ const BlogCard = ({ post }: BlogCardProps) => {
   const formattedDate = getFormattedDate(post?.date);
 
   return (
-    <div className="rounded-md backdrop-blur-sm p-4 bg-gradient-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-gradient-to-l">
+    <div className="rounded-md backdrop-blur-xs p-4 bg-linear-to-r from-indigo-600/20 to-cyan-800/20 hover:bg-linear-to-l">
       <Link href={`/blog/${post.slug}`}>
         <p className="text-xs mb-2">{post?.category}</p>
         <h4 className="text-lg font-bold text-cyan-100">{post.title}</h4>

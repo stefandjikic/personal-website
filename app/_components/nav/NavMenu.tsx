@@ -49,7 +49,7 @@ const NavMenu = () => {
     <div className="relative" ref={menuButtonRef}>
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="font-semibold text-cyan-100 rounded-md backdrop-blur-sm bg-white/5 p-2"
+        className="font-semibold text-cyan-100 rounded-md backdrop-blur-xs bg-white/5 p-2"
       >
         <Image
           src={isMenuOpen ? menuIconOpen : menuIcon}
@@ -60,7 +60,7 @@ const NavMenu = () => {
       </button>
       {isMenuOpen && (
         <div
-          className="flex flex-col w-48 absolute top-12 right-0 z-10 rounded-md backdrop-blur-sm bg-white/10"
+          className="flex flex-col w-48 absolute top-12 right-0 z-10 rounded-md backdrop-blur-xs bg-white/10"
           ref={menuRef}
         >
           {LINKS.map((link) => (
