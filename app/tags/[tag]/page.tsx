@@ -10,22 +10,23 @@ export const generateStaticParams = async () => {
 };
 
 interface TagPageProps {
-  params: {
+  params: Promise<{
     tag: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: TagPageProps): Promise<Metadata> {
+  const { tag } = await params;
   return {
-    title: `Posts on ${params.tag}`,
-    description: `Posts tagged with ${params.tag}`,
+    title: `Posts on ${tag}`,
+    description: `Posts tagged with ${tag}`,
   };
 }
 
-const TagPage = ({ params }: TagPageProps) => {
-  const tag = params?.tag;
+const TagPage = async ({ params }: TagPageProps) => {
+  const { tag } = await params;
   const posts = getPostsByTag(tag);
 
   return (

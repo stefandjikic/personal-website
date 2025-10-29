@@ -17,7 +17,7 @@ function Card(props: JSX.IntrinsicAttributes & { emoji: string; children: any })
   return (
     <div className="p-2 border border-cyan-300/30  bg-slate-900 rounded-sm text-sm flex items-center text-cyanl-100 mb-8">
       <div className="flex items-center mr-2 text-2xl">{props.emoji}</div>
-      <div className="w-full callout">{props.children}</div>
+      <div className="w-full callout prose-invert">{props.children}</div>
     </div>
   );
 }

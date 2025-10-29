@@ -16,15 +16,16 @@ export const generateStaticParams = async () => {
 };
 
 interface PostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata | undefined> {
-  const post = getAllPosts().find((post) => post.slug === params.slug);
+  const { slug } = await params;
+  const post = getAllPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
   }
@@ -48,8 +49,8 @@ export async function generateMetadata({
   };
 }
 
-const PostPage = (props: PostPageProps) => {
-  const slug = props.params.slug;
+const PostPage = async (props: PostPageProps) => {
+  const { slug } = await props.params;
   const post = getPostContent(slug);
 
   if (!post) {
