@@ -61,24 +61,15 @@ const AboutPage = () => {
           <span className="text-cyan-200/90">Currently</span>, I work at{" "}
           <a
             className="underline"
-            href="https://k7tech.agency/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            K7 Tech{" "}
-          </a>
-          (acquired by{" "}
-          <a
-            className="underline"
             href="https://appify.digital/"
             target="_blank"
             rel="noreferrer"
           >
-            Appify Digital
+            Appify Digital {" "}
           </a>
-          ) as a full-time frontend developer. My responsibilities include
+          as a full-time software developer. My responsibilities include
           building web and mobile apps, as well as handling non-technical tasks
-          such as client communication during the project planning phase.
+          such as client communication, project management, and marketing activities.
         </p>
         <p className="mb-6 text-gray-300/90">
           In <span className="text-cyan-200/90">2023</span>, in addition to my
