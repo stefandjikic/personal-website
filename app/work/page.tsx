@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import k7techImg from "@/app/assets/images/k7_logo.png";
 import codeImg from "@/app/assets/images/code_logo.png";
 import rawfishImg from "@/app/assets/images/rawfish_logo.png";
+import appifyImg from "@/app/assets/images/appify_logo_w.svg";
 import WorkSection from "../_components/work/WorkSection";
 
 export const metadata: Metadata = {
@@ -16,18 +17,37 @@ const WorkPage = () => {
         Work Experience
       </h1>
       <WorkSection
+        company="Appify Digital"
+        role="Software Developer"
+        type="Full Time"
+        image={appifyImg}
+        imageAlt="Appify Digital"
+        link="https://appify.digital/"
+        imgSize={100}
+      >
+        <p className="leading-7 font-light">
+          At Appify Digital, I develop web applications using React and Next.js and mobile
+          apps with React Native for clients across the UK and Ireland. I manage
+          projects from planning to delivery, coordinate with backend
+          developers, QA engineers, and designers, and work directly with
+          clients to ensure we deliver quality solutions on time and within
+          budget.
+        </p>
+      </WorkSection>
+      <WorkSection
         company="Rawfish"
         role="React Native Developer"
         type="Contract"
         image={rawfishImg}
         imageAlt="Rawfish"
         link="https://rawfish.com/en/"
-        imgSize={40}
+        imgSize={100}
         mobileImgWidth={150}
         mobileImgHeight={50}
       >
         <p className="leading-7 font-light">
-          Participating in development of the Amazon Fire TV, tvOs and Android TV app for{" "}
+          Participating in development of the Amazon Fire TV, tvOs and Android
+          TV app for{" "}
           <a
             href="https://mediasetinfinity.mediaset.it/"
             target="_blank"
@@ -39,18 +59,18 @@ const WorkPage = () => {
         </p>
       </WorkSection>
       <WorkSection
-        company="K7 Tech (Acquired by Appify Digital)"
+        company="K7 Tech"
         role="Frontend Developer"
         type="Full Time"
         image={k7techImg}
         imageAlt="K7 Tech"
         link="https://k7tech.agency/"
-        imgSize={60}
+        imgSize={100}
         mobileImgWidth={200}
         mobileImgHeight={200}
       >
         <p className="leading-7 font-light">
-          At K7Tech, I work as a full-time frontend developer, actively
+          At K7Tech, I worked as a full-time frontend developer, actively
           participating in all stages of web and mobile app development. I
           collaborate closely with clients during the project planning phase to
           understand their needs and expectations. Using my expertise in React,
@@ -64,7 +84,7 @@ const WorkPage = () => {
         image={codeImg}
         imageAlt="Code by Comtrade"
         link="https://code.edu.rs/"
-        imgSize={40}
+        imgSize={100}
         imgRounded
         mobileImgWidth={150}
         mobileImgHeight={50}

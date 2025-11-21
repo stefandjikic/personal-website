@@ -38,8 +38,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({
                   src={image}
                   alt={imageAlt}
                   className={`${imgRounded ? 'rounded-full' : ''} group-hover:scale-105 transition duration-200`}
-                  width={imgSize}
-                  height={imgSize}
+                  width={mobileImgWidth}
+                  height={mobileImgHeight}
                 />
               </a>
             </div>
@@ -58,8 +58,8 @@ const WorkSection: React.FC<WorkSectionProps> = ({
               src={image}
               alt={imageAlt}
               className={`${imgRounded ? 'rounded-full' : ''} group-hover:scale-105 transition duration-200`}
-              width={mobileImgWidth}
-              height={mobileImgHeight}
+              width={imgSize}
+              height={imgSize}
             />
           </a>
         </div>
