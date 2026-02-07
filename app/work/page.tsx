@@ -26,12 +26,11 @@ const WorkPage = () => {
         imgSize={100}
       >
         <p className="leading-7 font-light">
-          At Appify Digital, I develop web applications using React and Next.js and mobile
-          apps with React Native for clients across the UK and Ireland. I manage
-          projects from planning to delivery, coordinate with backend
-          developers, QA engineers, and designers, and work directly with
-          clients to ensure we deliver quality solutions on time and within
-          budget.
+          At Appify Digital, I design and deliver web and mobile applications
+          using React, Next.js, and React Native. I lead projects from discovery
+          to delivery, aligning technical execution with business goals,
+          coordinating cross-functional teams, and working directly with clients
+          to ensure high-quality, on-time, and cost-effective solutions
         </p>
       </WorkSection>
       <WorkSection
