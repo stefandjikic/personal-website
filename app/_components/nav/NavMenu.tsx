@@ -23,6 +23,10 @@ const NavMenu = () => {
       name: "Projects",
       href: "/projects",
     },
+    {
+      name: "Links",
+      href: "/links",
+    },
   ];
 
   useEffect(() => {

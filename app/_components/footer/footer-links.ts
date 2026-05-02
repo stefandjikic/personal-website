@@ -20,6 +20,10 @@ export const FOOTER_LINKS = [
     href: "/about",
   },
   {
+    name: "Links",
+    href: "/links",
+  },
+  {
     name: "Toolbox",
     href: "/toolbox",
     disabled: true,
